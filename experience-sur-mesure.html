@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maison Halo · Concept Qamar</title>
+  <meta name="description" content="Concept de démonstration Qamar : une galerie d'art génératif qui se peint pendant la visite.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Qamar">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Maison Halo · Concept Qamar">
+  <meta property="og:description" content="Concept de démonstration Qamar : une galerie d'art génératif qui se peint pendant la visite.">
+  <meta property="og:url" content="https://dhiaad.github.io/qamar/experience-sur-mesure.html">
+  <meta property="og:image" content="https://dhiaad.github.io/qamar/images/partage-qamar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://dhiaad.github.io/qamar/experience-sur-mesure.html">
+  <meta name="theme-color" content="#0a0b14">
+  <link rel="icon" href="images/logo/qamar-q.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=20261119d">
+  <link rel="stylesheet" href="css/experiences.css?v=20261119a">
+  <script>
+    // avant tout affichage : le texte reste caché tant que la police n'est pas chargée (évite le chevauchement au lancement)
+    (function () {
+      var r = document.documentElement, ok = function () { r.classList.add('polices'); };
+      r.classList.add('js');
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(ok); setTimeout(ok, 1200); } else { ok(); }
+    })();
+  </script>
+</head>
+<body class="exp exp-sur-mesure" data-experience="sur-mesure" style="--ambiance:#0a0b14">
+
+  <div class="exp-voile" aria-hidden="true">
+    <div class="exp-voile-contenu">
+      <span class="exp-voile-anneau"></span>
+      <p class="exp-voile-num">05</p>
+      <p class="exp-voile-label">Sur-mesure</p>
+    </div>
+  </div>
+
+  <header class="exp-entete">
+    <a class="exp-puce exp-retour" href="experiences.html#sur-mesure">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17 10H4M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+      <span class="exp-long">Galerie des expériences</span><span class="exp-court">Galerie</span>
+    </a>
+    <span class="exp-puce exp-concept mono">Concept de démonstration Qamar · 05 / 05</span>
+    <a class="exp-puce exp-logo" href="index.html" aria-label="Qamar, accueil"><img src="images/logo/qamar-q.svg" alt="" width="26" height="26"></a>
+  </header>
+
+  <main id="contenu">
+    <div class="sm-page">
+      <div class="sm-toile" aria-hidden="true"></div>
+      <section class="sm-ouverture">
+        <p class="mono">Maison Halo · art abstrait</p>
+        <h1>Une galerie qui se peint pendant que vous la visitez.</h1>
+        <p class="sm-chapo">Trois salles, une toile vivante, puis l'atelier : composez votre propre œuvre et emportez-la.</p>
+      </section>
+      <section class="sm-salle" data-salle="0" aria-labelledby="salle-0">
+        <div class="sm-cartel apparait"><p class="mono">Salle I</p><h2 id="salle-0">Matière</h2><p>Des pigments qui ne sèchent jamais. Passez la main sur la toile : elle se trouble comme de l'encre dans l'eau.</p></div>
+      </section>
+      <section class="sm-salle" data-salle="1" aria-labelledby="salle-1">
+        <div class="sm-cartel apparait"><p class="mono">Salle II</p><h2 id="salle-1">Lignes</h2><p>Les courbes de niveau d'un paysage qui n'existe pas. Elles glissent, se resserrent, se dénouent.</p></div>
+      </section>
+      <section class="sm-salle" data-salle="2" aria-labelledby="salle-2">
+        <div class="sm-cartel apparait"><p class="mono">Salle III</p><h2 id="salle-2">Couleur</h2><p>Deux champs de couleur qui respirent lentement. Rien d'autre, et pourtant tout bouge.</p></div>
+      </section>
+      <section class="sm-salle sm-salle-atelier" data-salle="3" aria-labelledby="sm-atelier-titre">
+        <div class="sm-atelier">
+          <p class="mono">Salle IV · l'atelier</p>
+          <h2 id="sm-atelier-titre">Votre œuvre.</h2>
+          <fieldset><legend>Palette</legend><div class="sm-palettes"><button class="sm-palette" type="button" aria-pressed="true"><span class="sm-nuancier"><i style="background:#0b1026"></i><i style="background:#1f3a8a"></i><i style="background:#d9d2c3"></i><i style="background:#f2b84b"></i></span>Encre</button><button class="sm-palette" type="button" aria-pressed="false"><span class="sm-nuancier"><i style="background:#2a0f24"></i><i style="background:#c2416b"></i><i style="background:#f39a6b"></i><i style="background:#f8e3c8"></i></span>Aube</button><button class="sm-palette" type="button" aria-pressed="false"><span class="sm-nuancier"><i style="background:#0d1f17"></i><i style="background:#2f6b4f"></i><i style="background:#b8c98a"></i><i style="background:#e9d38a"></i></span>Jardin</button><button class="sm-palette" type="button" aria-pressed="false"><span class="sm-nuancier"><i style="background:#120707"></i><i style="background:#7a1610"></i><i style="background:#e0542a"></i><i style="background:#f6c453"></i></span>Brasier</button></div></fieldset>
+          <label class="sm-reglage" for="sm-tumulte">Tumulte</label>
+          <input id="sm-tumulte" type="range" min="0" max="1" step="0.01" value="0.4">
+          <label class="sm-reglage" for="sm-lignes">Matière ↔ lignes</label>
+          <input id="sm-lignes" type="range" min="0" max="1" step="0.01" value="0.3">
+          <div class="sm-actions">
+            <button class="sm-graine" type="button">Nouvelle graine</button>
+            <button class="sm-signer" type="button">Signer et télécharger</button>
+          </div>
+          <p class="sm-signature" role="status" hidden><b></b><span>Signée Maison Halo pour vous. Œuvre unique, générée dans votre navigateur.</span></p>
+          <p class="sm-mention">Maison Halo est une maison d'art fictive, imaginée par Qamar pour cette démonstration.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <nav class="exp-voisins" aria-label="Autres expériences">
+      <a class="exp-voisin" href="experience-e-commerce.html">
+        <span class="mono">Précédente · 04</span>
+        <b>E-commerce</b>
+        <span class="exp-voisin-titre">Transformez la découverte en achat.</span>
+      </a>
+      <a class="exp-voisin suivante" href="experience-immersif.html">
+        <span class="mono">Suivante · 01</span>
+        <b>Immersif</b>
+        <span class="exp-voisin-titre">Entrez dans l'expérience.</span>
+      </a>
+  </nav>
+  <p class="exp-mention">Démonstration conçue par Qamar. Les marques, produits, événements et prix présentés sont fictifs.</p>
+
+  <script src="js/exp-commun.js?v=20261119a"></script>
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js"
+    } }
+  </script>
+  <script type="module" src="js/exp-sur-mesure.js?v=20261119a"></script>
+</body>
+</html>

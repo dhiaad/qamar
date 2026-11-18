@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nocturne · Concept Qamar</title>
+  <meta name="description" content="Concept de démonstration Qamar : un festival fictif, son récit d'une nuit, son compte à rebours et son programme.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Qamar">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Nocturne · Concept Qamar">
+  <meta property="og:description" content="Concept de démonstration Qamar : un festival fictif, son récit d'une nuit, son compte à rebours et son programme.">
+  <meta property="og:url" content="https://dhiaad.github.io/qamar/experience-evenementiel.html">
+  <meta property="og:image" content="https://dhiaad.github.io/qamar/images/partage-qamar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://dhiaad.github.io/qamar/experience-evenementiel.html">
+  <meta name="theme-color" content="#0d0712">
+  <link rel="icon" href="images/logo/qamar-q.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=20261119d">
+  <link rel="stylesheet" href="css/experiences.css?v=20261119a">
+  <script>
+    // avant tout affichage : le texte reste caché tant que la police n'est pas chargée (évite le chevauchement au lancement)
+    (function () {
+      var r = document.documentElement, ok = function () { r.classList.add('polices'); };
+      r.classList.add('js');
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(ok); setTimeout(ok, 1200); } else { ok(); }
+    })();
+  </script>
+</head>
+<body class="exp exp-evenementiel" data-experience="evenementiel" style="--ambiance:#0d0712">
+
+  <div class="exp-voile" aria-hidden="true">
+    <div class="exp-voile-contenu">
+      <span class="exp-voile-anneau"></span>
+      <p class="exp-voile-num">03</p>
+      <p class="exp-voile-label">Événementiel</p>
+    </div>
+  </div>
+
+  <header class="exp-entete">
+    <a class="exp-puce exp-retour" href="experiences.html#evenementiel">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17 10H4M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+      <span class="exp-long">Galerie des expériences</span><span class="exp-court">Galerie</span>
+    </a>
+    <span class="exp-puce exp-concept mono">Concept de démonstration Qamar · 03 / <span class="seul-pc">05</span><span class="seul-mobile">04</span></span>
+    <a class="exp-puce exp-logo" href="index.html" aria-label="Qamar, accueil"><img src="images/logo/qamar-q.svg" alt="" width="26" height="26"></a>
+  </header>
+
+  <main id="contenu">
+    <section class="ev-hero">
+      <div class="ev-cone" aria-hidden="true"></div>
+      <p class="mono ev-sur">Festival des lumières · édition fictive</p>
+      <h1 aria-label="Nocturne"><span style="--i:0" aria-hidden="true">N</span><span style="--i:1" aria-hidden="true">O</span><span style="--i:2" aria-hidden="true">C</span><span style="--i:3" aria-hidden="true">T</span><span style="--i:4" aria-hidden="true">U</span><span style="--i:5" aria-hidden="true">R</span><span style="--i:6" aria-hidden="true">N</span><span style="--i:7" aria-hidden="true">E</span></h1>
+      <p class="ev-chapo">Trois nuits pour célébrer la lumière. Le <span data-date-evt></span>, la ville s'éteint pour mieux briller.</p>
+    </section>
+
+    <div class="evt-recit" role="region" aria-label="Récit de la nuit Nocturne">
+      <div class="evt-colle">
+        <canvas aria-hidden="true"></canvas>
+          <div class="evt-chapitre"><p class="evt-heure">19:00</p><h2>Le soleil se couche sur la ville.</h2><p>Nocturne commence comme toutes les belles nuits : par une attente.</p></div>
+          <div class="evt-chapitre"><p class="evt-heure">20:30</p><h2>Mille lanternes.</h2><p>Chacun lâche la sienne. Touchez le ciel pour en libérer une.</p><p class="evt-indice">Touchez ou cliquez le ciel</p></div>
+          <div class="evt-chapitre"><p class="evt-heure">22:00</p><h2>Le dôme s'éveille.</h2><p>Des faisceaux balaient la nuit au rythme du set audiovisuel « Éclipse ».</p></div>
+          <div class="evt-chapitre"><p class="evt-heure">23:30</p><h2>La façade devient écran.</h2><p>Une projection monumentale transforme l'architecture en récit.</p></div>
+          <div class="evt-chapitre"><p class="evt-heure">00:00</p><h2>Le ciel s'embrase.</h2><p>Touchez le ciel pour lancer votre propre feu.</p><p class="evt-indice">Touchez ou cliquez le ciel</p></div>
+          <div class="evt-chapitre"><p class="evt-heure">06:12</p><h2>L'aube.</h2><p>La ville se rendort. Nocturne revient l'an prochain.</p></div>
+        <div class="evt-horloge" aria-hidden="true">19:00</div>
+      </div>
+    </div>
+
+    <div class="ev-bandeaux" aria-hidden="true">
+      <div class="ev-bande ev-bande-1"><div><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span></div></div>
+      <div class="ev-bande ev-bande-2"><div><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span><span>Nocturne ✦ Trois nuits ✦ Lumière ✦</span></div></div>
+    </div>
+
+    <section class="ev-compte" aria-label="Compte à rebours">
+      <p class="mono">Le spectacle commence dans</p>
+      <div class="ev-chiffres">
+        <div class="evt-chiffre"><div class="evt-cases"><span class="evt-case"></span><span class="evt-case"></span></div><span class="mono">Jours</span></div>
+        <div class="evt-chiffre"><div class="evt-cases"><span class="evt-case"></span><span class="evt-case"></span></div><span class="mono">Heures</span></div>
+        <div class="evt-chiffre"><div class="evt-cases"><span class="evt-case"></span><span class="evt-case"></span></div><span class="mono">Minutes</span></div>
+        <div class="evt-chiffre"><div class="evt-cases"><span class="evt-case"></span><span class="evt-case"></span></div><span class="mono">Secondes</span></div>
+      </div>
+    </section>
+
+    <section class="ev-programme" aria-labelledby="ev-prog-titre">
+      <h2 id="ev-prog-titre">Programme</h2>
+      <div class="evt-jours" role="tablist" aria-label="Jours"><button class="evt-jour" type="button" role="tab" id="jour-Vendredi" aria-controls="liste-Vendredi" aria-selected="true" tabindex="0">Vendredi</button><button class="evt-jour" type="button" role="tab" id="jour-Samedi" aria-controls="liste-Samedi" aria-selected="false" tabindex="-1">Samedi</button><button class="evt-jour" type="button" role="tab" id="jour-Dimanche" aria-controls="liste-Dimanche" aria-selected="false" tabindex="-1">Dimanche</button></div>
+      <ul class="evt-liste" role="tabpanel" id="liste-Vendredi" aria-labelledby="jour-Vendredi"><li><span class="evt-l-heure">19:00</span><span class="evt-l-titre">Ouverture des portes</span><span class="mono evt-l-lieu">Parvis</span></li><li><span class="evt-l-heure">20:30</span><span class="evt-l-titre">Cérémonie des lanternes</span><span class="mono evt-l-lieu">Grande scène</span></li><li><span class="evt-l-heure">22:00</span><span class="evt-l-titre">Set audiovisuel « Éclipse »</span><span class="mono evt-l-lieu">Dôme</span></li></ul>
+      <ul class="evt-liste" role="tabpanel" id="liste-Samedi" aria-labelledby="jour-Samedi" hidden><li><span class="evt-l-heure">16:00</span><span class="evt-l-titre">Ateliers lumière</span><span class="mono evt-l-lieu">Jardins</span></li><li><span class="evt-l-heure">21:00</span><span class="evt-l-titre">Concert sous les étoiles</span><span class="mono evt-l-lieu">Grande scène</span></li><li><span class="evt-l-heure">23:30</span><span class="evt-l-titre">Projection monumentale</span><span class="mono evt-l-lieu">Façade nord</span></li></ul>
+      <ul class="evt-liste" role="tabpanel" id="liste-Dimanche" aria-labelledby="jour-Dimanche" hidden><li><span class="evt-l-heure">11:00</span><span class="evt-l-titre">Brunch céleste</span><span class="mono evt-l-lieu">Terrasse</span></li><li><span class="evt-l-heure">15:00</span><span class="evt-l-titre">Conférence : la nuit et nous</span><span class="mono evt-l-lieu">Auditorium</span></li><li><span class="evt-l-heure">19:00</span><span class="evt-l-titre">Clôture et feu d'artifice</span><span class="mono evt-l-lieu">Parvis</span></li></ul>
+    </section>
+
+    <section class="ev-infos" aria-label="Informations pratiques">
+      <div class="ev-infos-grille"><div class="ev-info apparait" style="--r:-1deg"><p class="mono">Lieu</p><p class="ev-info-val">Grande Halle</p><p class="ev-info-sous">Lieu fictif de démonstration</p></div><div class="ev-info apparait" style="--r:0deg"><p class="mono">Accès</p><p class="ev-info-val">Dès 19 h</p><p class="ev-info-sous">Horaires fictifs</p></div><div class="ev-info apparait" style="--r:1deg"><p class="mono">Billetterie</p><p class="ev-info-val">Pass 3 nuits</p><p class="ev-info-sous">Billetterie non active (démonstration)</p></div></div>
+      <div class="ev-resa">
+        <button class="evt-reserver" type="button">Réserver mon pass</button>
+        <p class="evt-avis" role="status" hidden>Démonstration : aucune réservation n'est enregistrée. <a href="devis.html">Créer le site de votre événement</a></p>
+      </div>
+    </section>
+  </main>
+
+  <nav class="exp-voisins" aria-label="Autres expériences">
+      <a class="exp-voisin" href="experience-premium.html">
+        <span class="mono">Précédente · 02</span>
+        <b>Premium</b>
+        <span class="exp-voisin-titre">L'élégance dans chaque détail.</span>
+      </a>
+      <a class="exp-voisin suivante" href="experience-e-commerce.html">
+        <span class="mono">Suivante · 04</span>
+        <b>E-commerce</b>
+        <span class="exp-voisin-titre">Transformez la découverte en achat.</span>
+      </a>
+  </nav>
+  <p class="exp-mention">Démonstration conçue par Qamar. Les marques, produits, événements et prix présentés sont fictifs.</p>
+
+  <script src="js/exp-commun.js?v=20261119a"></script>
+  <script src="js/exp-evenementiel.js?v=20261119a" defer></script>
+</body>
+</html>

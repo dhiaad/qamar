@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qamar — Développement web et visibilité digitale</title>
+  <meta name="description" content="Qamar conçoit des sites vitrines, des boutiques en ligne, des sites immersifs et des applications web qui font vivre l'univers de votre entreprise.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Qamar">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Qamar — Développement web et visibilité digitale">
+  <meta property="og:description" content="Qamar conçoit des sites vitrines, des boutiques en ligne, des sites immersifs et des applications web qui font vivre l'univers de votre entreprise.">
+  <meta property="og:url" content="https://dhiaad.github.io/qamar/">
+  <meta property="og:image" content="https://dhiaad.github.io/qamar/images/partage-qamar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://dhiaad.github.io/qamar/">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="images/logo/qamar-q.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=20261119d">
+  <link rel="preload" as="image" href="images/ville/neons2-1920.webp" imagesrcset="images/ville/neons2-1920.webp 1920w, images/ville/neons2-3840.webp 3840w" imagesizes="100vw">
+  <script>
+    // avant tout affichage : le texte reste caché tant que la police n'est pas chargée (évite le chevauchement au lancement)
+    (function () {
+      var r = document.documentElement, ok = function () { r.classList.add('polices'); };
+      r.classList.add('js');
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(ok); setTimeout(ok, 1200); } else { ok(); }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Accueil : la ville aux néons ; au maintien du clic, les néons sont aspirés vers la tour du fond et montent jusqu'à la Lune -->
+  <canvas class="ville-scene" aria-hidden="true"></canvas>
+  <div class="voile-scene" aria-hidden="true"></div>
+  <div class="curseur-maintien" aria-hidden="true">
+    <svg class="curseur-anneau" viewBox="0 0 48 48"><circle class="fond" cx="24" cy="24" r="21"/><circle class="progres" cx="24" cy="24" r="21"/></svg>
+    <span class="curseur-texte mono">Cliquer et maintenir</span>
+  </div>
+  <!-- Mots révélés pendant le maintien du clic sur l'accueil -->
+  <div class="maintien-mots" aria-hidden="true">
+    <p class="maintien-mot">Imaginer</p>
+    <p class="maintien-mot">Créer</p>
+    <p class="maintien-mot">Affiner</p>
+    <p class="maintien-mot">Briller</p>
+  </div>
+
+
+  <!-- ===== En-tête ===== -->
+  <header class="entete">
+    <a class="logo" href="index.html" aria-label="Qamar, accueil">
+      <img class="logo-marque" src="images/logo/qamar-logo.svg" alt="" width="52" height="36">
+      <span>Qamar</span>
+    </a>
+    <nav class="nav-pilule" aria-label="Navigation principale">
+      <a href="experiences.html">Explorer <span class="point" aria-hidden="true">•</span></a>
+      <a href="studio.html">Tarifs</a>
+      <a href="marketing.html">Marketing</a>
+      <a href="fidelite.html">Cartes de fidélité</a>
+      <a href="methode.html">Méthodes</a>
+      <button class="nav-grille" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><circle cx="3" cy="3" r="1.3"/><circle cx="9" cy="3" r="1.3"/><circle cx="3" cy="9" r="1.3"/><circle cx="9" cy="9" r="1.3"/></svg>
+      </button>
+    </nav>
+    <div class="entete-actions">
+      <a class="btn btn-orange" href="devis.html"><span class="txt-long">Demander un devis</span><span class="txt-court">Devis</span></a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <button class="menu-fermer btn btn-clair" type="button">Fermer</button>
+    <nav aria-label="Menu">
+      <ul>
+        <li><a href="experiences.html">Explorer</a></li>
+        <li><a href="studio.html">Tarifs</a></li>
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="fidelite.html">Cartes de fidélité</a></li>
+        <li><a href="methode.html">Méthodes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="devis.html">Demander un devis</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ===== 1. La ville la nuit, traversée de néons orange qui vivent ===== -->
+    <div class="accueil-ville">
+      <div class="ville ville-neons-fixe" aria-hidden="true">
+        <div class="ville-cadre">
+          <img class="ville-photo" src="images/ville/neons2-1920.webp" srcset="images/ville/neons2-1920.webp 1920w, images/ville/neons2-3840.webp 3840w" sizes="100vw" alt="" width="1920" height="1512" fetchpriority="high">
+          <div class="ville-flux-lent"></div>
+          <div class="ville-flux-vif"></div>
+        </div>
+        <div class="ville-voile"></div>
+      </div>
+    <section class="hero" data-rubans>
+      <div class="hero-contenu">
+        <h1 class="hero-titre">
+          <span class="ligne">Expert en</span>
+          <span class="ligne">développement web</span>
+          <span class="ligne">et <em>visibilité digitale.</em></span>
+        </h1>
+        <div class="hero-cote">
+          <p>Qamar accompagne les entreprises dans tout leur développement digital : du site web aux cartes de fidélité, jusqu'à vos vidéos pour Instagram.</p>
+          <div class="boutons">
+            <a class="btn btn-orange" href="experiences.html">Découvrir nos expériences</a>
+            <a class="btn btn-sombre" href="devis.html">Demander un devis</a>
+          </div>
+          <p class="astuce-maintien mono" aria-hidden="true"><span></span>Restez appuyé</p>
+        </div>
+      </div>
+    </section>
+      <section class="ville-portail">
+        <a class="portail" id="explorer" href="experiences.html">
+        <span class="portail-etoiles" aria-hidden="true"><i style="left:5%;top:13%"></i><i style="left:42%;top:74%"></i><i style="left:79%;top:35%"></i><i style="left:16%;top:96%"></i><i style="left:53%;top:57%"></i><i style="left:90%;top:18%"></i><i style="left:27%;top:79%"></i><i style="left:64%;top:40%"></i><i style="left:1%;top:1%"></i><i style="left:38%;top:62%"></i><i style="left:75%;top:23%"></i><i style="left:12%;top:84%"></i><i style="left:49%;top:45%"></i><i style="left:86%;top:6%"></i><i style="left:23%;top:67%"></i><i style="left:60%;top:28%"></i><i style="left:97%;top:89%"></i><i style="left:34%;top:50%"></i><i style="left:71%;top:11%"></i><i style="left:8%;top:72%"></i><i style="left:45%;top:33%"></i><i style="left:82%;top:94%"></i><i style="left:19%;top:55%"></i><i style="left:56%;top:16%"></i><i style="left:93%;top:77%"></i><i style="left:30%;top:38%"></i><i style="left:67%;top:99%"></i><i style="left:4%;top:60%"></i><i style="left:41%;top:21%"></i><i style="left:78%;top:82%"></i><i style="left:15%;top:43%"></i><i style="left:52%;top:4%"></i><i style="left:89%;top:65%"></i><i style="left:26%;top:26%"></i></span>
+        <svg class="portail-flux" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="fluxDegrade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FC4F00" stop-opacity="0"/><stop offset=".5" stop-color="#FC4F00"/><stop offset="1" stop-color="#ffb184"/></linearGradient></defs>
+          <g class="flux-fond"><path d="M-20 30 C250 -22 470 211 600 230" style="--d:4.76s;--r:-0.29s"/><path d="M1220 44 C950 -22 730 203 600 230" style="--d:4.60s;--r:-3.64s"/><path d="M-20 103 C250 22 470 132 600 230" style="--d:4.24s;--r:-0.28s"/><path d="M1220 95 C950 146 730 218 600 230" style="--d:3.34s;--r:-2.26s"/><path d="M-20 184 C250 255 470 270 600 230" style="--d:4.60s;--r:-0.25s"/><path d="M1220 207 C950 218 730 122 600 230" style="--d:5.54s;--r:-0.19s"/><path d="M-20 258 C250 242 470 217 600 230" style="--d:3.55s;--r:-0.47s"/><path d="M1220 269 C950 322 730 318 600 230" style="--d:4.84s;--r:-0.41s"/><path d="M-20 366 C250 439 470 158 600 230" style="--d:4.09s;--r:-2.19s"/><path d="M1220 334 C950 388 730 125 600 230" style="--d:4.69s;--r:-1.99s"/><path d="M-20 444 C250 463 470 308 600 230" style="--d:3.95s;--r:-2.34s"/><path d="M1220 439 C950 441 730 186 600 230" style="--d:3.80s;--r:-0.72s"/></g>
+          <g class="flux-energie"><path d="M-20 30 C250 -22 470 211 600 230" style="--d:4.76s;--r:-0.29s"/><path d="M1220 44 C950 -22 730 203 600 230" style="--d:4.60s;--r:-3.64s"/><path d="M-20 103 C250 22 470 132 600 230" style="--d:4.24s;--r:-0.28s"/><path d="M1220 95 C950 146 730 218 600 230" style="--d:3.34s;--r:-2.26s"/><path d="M-20 184 C250 255 470 270 600 230" style="--d:4.60s;--r:-0.25s"/><path d="M1220 207 C950 218 730 122 600 230" style="--d:5.54s;--r:-0.19s"/><path d="M-20 258 C250 242 470 217 600 230" style="--d:3.55s;--r:-0.47s"/><path d="M1220 269 C950 322 730 318 600 230" style="--d:4.84s;--r:-0.41s"/><path d="M-20 366 C250 439 470 158 600 230" style="--d:4.09s;--r:-2.19s"/><path d="M1220 334 C950 388 730 125 600 230" style="--d:4.69s;--r:-1.99s"/><path d="M-20 444 C250 463 470 308 600 230" style="--d:3.95s;--r:-2.34s"/><path d="M1220 439 C950 441 730 186 600 230" style="--d:3.80s;--r:-0.72s"/></g>
+        </svg>
+        <span class="portail-haut">
+          <span class="mono portail-tag">Explorer · <span class="seul-pc">5</span><span class="seul-mobile">4</span> expériences interactives</span>
+          <span class="portail-titre">Vivez l'expérience <em>au lieu de la lire</em></span>
+        </span>
+        <span class="portail-lune" aria-hidden="true"><span class="pl-halo"></span><span class="pl-anneau"></span><span class="pl-astre"></span></span>
+        <span class="mono portail-astuce">Cliquez sur la lune pour entrer <span aria-hidden="true">→</span></span>
+      </a>
+      </section>
+    </div>
+
+    <!-- ===== 2. Explorer, puis les trois expertises ===== -->
+    <section class="clair accueil-explorer">
+
+      <div class="trois-facons" role="region" aria-labelledby="trois-facons-titre">
+        <div class="trois-tete">
+          <p class="etiquette"><span class="carre" aria-hidden="true"></span>Trois expertises, une même vision</p>
+          <div class="formules-tete">
+            <h2 class="formules-titre" id="trois-facons-titre">Trois façons de mettre<br>votre marque en lumière</h2>
+            <p>Un site qui vous ressemble, des réseaux sociaux qui vivent et des clients qui reviennent : choisissez par où commencer, ou réunissez les trois.</p>
+          </div>
+        </div>
+        <div class="trois-grille">
+          <a class="facon facon-studio" href="studio.html">
+            <div class="facon-visuel" aria-hidden="true">
+              <div class="fv-etoiles"><i style="left:11%;top:7%"></i><i style="left:48%;top:60%"></i><i style="left:85%;top:43%"></i><i style="left:22%;top:26%"></i><i style="left:59%;top:9%"></i><i style="left:96%;top:62%"></i><i style="left:33%;top:45%"></i><i style="left:70%;top:28%"></i><i style="left:7%;top:11%"></i><i style="left:44%;top:64%"></i><i style="left:81%;top:47%"></i><i style="left:18%;top:30%"></i><i style="left:55%;top:13%"></i><i style="left:92%;top:66%"></i><i style="left:29%;top:49%"></i><i style="left:66%;top:32%"></i><i style="left:3%;top:15%"></i><i style="left:40%;top:68%"></i><i style="left:77%;top:51%"></i><i style="left:14%;top:34%"></i><i style="left:51%;top:17%"></i><i style="left:88%;top:0%"></i><i style="left:25%;top:53%"></i><i style="left:62%;top:36%"></i><i style="left:99%;top:19%"></i><i style="left:36%;top:2%"></i></div>
+              <div class="fv-portable">
+              <svg viewBox="0 0 400 260">
+                <defs><linearGradient id="fvEcran" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c0b04"/><stop offset="1" stop-color="#0a0503"/></linearGradient></defs>
+                <rect class="pc-coque" x="62" y="14" width="276" height="182" rx="12"/>
+                <rect x="74" y="26" width="252" height="158" rx="4" fill="url(#fvEcran)"/>
+                <g class="pc-site">
+                  <rect x="86" y="38" width="22" height="8" rx="2" fill="#FC4F00"/>
+                  <rect x="246" y="40" width="18" height="4" rx="2" fill="rgba(255,255,255,.35)"/><rect x="270" y="40" width="18" height="4" rx="2" fill="rgba(255,255,255,.35)"/><rect x="294" y="38" width="22" height="8" rx="2" fill="#FC4F00"/>
+                  <rect class="pc-l1" x="86" y="70" width="120" height="12" rx="2" fill="#f4f2ef"/>
+                  <rect class="pc-l2" x="86" y="88" width="92" height="12" rx="2" fill="#f4f2ef"/>
+                  <rect class="pc-l3" x="86" y="110" width="60" height="12" rx="2" fill="#FC4F00"/>
+                  <circle class="pc-astre" cx="268" cy="96" r="30" fill="none" stroke="rgba(255,255,255,.18)"/>
+                  <path class="pc-astre" d="M268 66 A30 30 0 0 1 268 126 A19 30 0 0 0 268 66 Z" fill="#FC4F00"/>
+                  <rect x="86" y="144" width="70" height="28" rx="3" fill="rgba(255,255,255,.08)"/><rect x="164" y="144" width="70" height="28" rx="3" fill="rgba(255,255,255,.08)"/><rect x="242" y="144" width="74" height="28" rx="3" fill="rgba(255,255,255,.08)"/>
+                </g>
+                <path class="pc-base" d="M26 200 H374 L358 222 Q356 226 350 226 H50 Q44 226 42 222 Z"/>
+                <rect x="172" y="200" width="56" height="6" rx="3" fill="rgba(0,0,0,.25)"/>
+              </svg>
+            </div>
+            </div>
+            <div class="facon-texte">
+              <p class="mono facon-tag"><span>01</span>Sites web</p>
+              <h3>Des sites professionnels qui marquent les esprits.</h3>
+              <p>Vitrine, boutique en ligne, site conceptuel ou application web : un site sur mesure, rapide et pensé pour votre marque.</p>
+              <span class="facon-cta">Voir les tarifs <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            </div>
+          </a>
+          <a class="facon facon-marketing" href="marketing.html">
+            <div class="facon-visuel" aria-hidden="true">
+              <div class="publications"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="bulle-stat"><span class="mono">Cette semaine</span><b>+ 3 publications</b><span class="mono o">Programmées</span></div>
+            </div>
+            <div class="facon-texte">
+              <p class="mono facon-tag"><span>02</span>Marketing</p>
+              <h3>Vos réseaux sociaux gérés de A à Z.</h3>
+              <p>Avec notre agence partenaire : stratégie, création de contenus, publication, publicité et suivi des résultats.</p>
+              <span class="facon-cta">Découvrir le marketing <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            </div>
+          </a>
+          <a class="facon facon-fidelite" href="fidelite.html">
+            <div class="facon-visuel" aria-hidden="true">
+              <div class="carte-wallet">
+                <div class="cw-haut"><span>Votre boutique</span><span class="mono" data-tampons-texte>7 / 10</span></div>
+                <div class="cw-tampons" data-tampons><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i></i><i></i><i></i></div>
+                <div class="cw-bas mono">Plus que 3 tampons</div>
+              </div>
+              <div class="notif"><b>Votre boutique</b><span>Vous passez tout près : votre cadeau vous attend.</span></div>
+            </div>
+            <div class="facon-texte">
+              <p class="mono facon-tag"><span>03</span>Fidélité</p>
+              <h3>La carte de fidélité, directement dans le téléphone.</h3>
+              <p>Points ou tampons dans Apple Wallet et Google Wallet, et des messages pour faire revenir vos clients.</p>
+              <span class="facon-cta">Découvrir la fidélité <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== 3. Les offres : quatre formules, accès aux tarifs ===== -->
+    <section class="sombre offres">
+      <div class="sphere" aria-hidden="true">
+        <div class="sphere-corps"></div>
+        <svg class="sphere-anneau" viewBox="0 0 1000 1000"><ellipse cx="500" cy="500" rx="470" ry="120" fill="none" stroke="#FC4F00" stroke-width="3"/></svg>
+      </div>
+      <!-- ===== 5. Les formules : quatre colonnes hautes, celle survolée s'élargit ===== -->
+      <div class="formules" id="formules">
+        <p class="etiquette"><span class="carre" aria-hidden="true"></span>Nos formules</p>
+        <div class="formules-tete">
+          <h2 class="formules-titre">Quatre formules,<br>des prix clairs</h2>
+          <p>Des prix clairs, annoncés dès le départ. Survolez ou touchez une formule pour la découvrir, puis comparez tout en détail sur la page Tarifs.</p>
+        </div>
+        <div class="colonnes">
+          <article class="colonne ouverte" data-formule="vitrine">
+            <div class="colonne-haut"><span class="mono">01</span><div class="colonne-lune"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="13" class="ombre"/><path class="lumiere" d="M20 7 A13 13 0 0 1 20 33 A8 13 0 0 0 20 7 Z"/></svg></div></div>
+            <h3>Essentiel</h3>
+            <p class="colonne-accroche">Une présence professionnelle pour présenter votre activité et recevoir des demandes.</p>
+            <ul class="colonne-points"><li>Jusqu'à 5 pages sur mesure</li><li>Formulaire de contact</li><li>Référencement local de base</li><li>Idéal pour commerces, artisans et indépendants</li></ul>
+            <div class="colonne-bas">
+              <p class="colonne-prix"><span class="mono">À partir de</span>997 €</p>
+              <a class="btn btn-orange" href="devis.html?formule=vitrine">Demander un devis</a>
+              <a class="lien-mono" href="studio.html#vitrine">En savoir plus</a>
+            </div>
+          </article>
+          <article class="colonne" data-formule="e-commerce">
+            <div class="colonne-haut"><span class="mono">02</span><div class="colonne-lune"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="13" class="ombre"/><path class="lumiere" d="M20 7 A13 13 0 0 1 20 33 Z"/></svg></div></div>
+            <h3>Signature</h3>
+            <p class="colonne-accroche">Tout l'Essentiel, plus une boutique en ligne et des comptes clients.</p>
+            <ul class="colonne-points"><li>Tout ce que comprend Essentiel</li><li>Catalogue et fiches produits</li><li>Paiement sécurisé en ligne</li><li>Commandes, stocks et comptes clients</li></ul>
+            <div class="colonne-bas">
+              <p class="colonne-prix"><span class="mono">À partir de</span>1 399 €</p>
+              <a class="btn btn-orange" href="devis.html?formule=e-commerce">Demander un devis</a>
+              <a class="lien-mono" href="studio.html#e-commerce">En savoir plus</a>
+            </div>
+          </article>
+          <article class="colonne" data-formule="conceptuel">
+            <div class="colonne-haut"><span class="mono">03</span><div class="colonne-lune"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="13" class="ombre"/><path class="lumiere" d="M20 7 A13 13 0 0 1 20 33 A8 13 0 0 1 20 7 Z"/></svg></div></div>
+            <h3>Immersion</h3>
+            <p class="colonne-accroche">Tout Signature, plus une expérience qui marque les esprits.</p>
+            <ul class="colonne-points"><li>Tout ce que comprend Signature, boutique comprise</li><li>Direction artistique poussée</li><li>Animations et 3D sur mesure</li><li>Idéal pour un lancement ou une marque forte</li></ul>
+            <div class="colonne-bas">
+              <p class="colonne-prix"><span class="mono">À partir de</span>1 880 €</p>
+              <a class="btn btn-orange" href="devis.html?formule=conceptuel">Demander un devis</a>
+              <a class="lien-mono" href="studio.html#conceptuel">En savoir plus</a>
+            </div>
+          </article>
+          <article class="colonne" data-formule="application">
+            <div class="colonne-haut"><span class="mono">04</span><div class="colonne-lune"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="13" class="lumiere"/></svg></div></div>
+            <h3>Sur mesure</h3>
+            <p class="colonne-accroche">Applications web, plateformes et projets qui sortent des trois offres.</p>
+            <ul class="colonne-points"><li>Application, espace client ou boutique complexe</li><li>Comptes, rôles et tableaux de bord</li><li>Connexion à vos logiciels</li><li>Évolutive, module par module</li></ul>
+            <div class="colonne-bas">
+              <p class="colonne-prix"><span class="mono">Tarif</span>Sur devis</p>
+              <a class="btn btn-orange" href="devis.html?formule=application">Demander un devis</a>
+              <a class="lien-mono" href="studio.html#application">En savoir plus</a>
+            </div>
+          </article>
+        </div>
+        <div class="formules-suite">
+          <a class="btn btn-orange" href="studio.html">Comparer toutes les offres</a>
+          <a class="btn btn-sombre" href="devis.html">Demander un devis</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. Pourquoi Qamar (condensé), puis la méthode ===== -->
+    <section class="clair pourquoi" id="pourquoi">
+      <div class="pourquoi-tete">
+        <p class="etiquette"><span class="carre" aria-hidden="true"></span>Pourquoi Qamar</p>
+        <h2 class="formules-titre">Un site qui travaille<br>pour votre activité</h2>
+      </div>
+      <div class="pourquoi-compact">
+        <article class="carte-pq" id="carte-design">
+          <div class="visuel">
+              <div class="onglets"><span class="actif">Vitrine</span><span>E-commerce</span></div>
+              <div class="maquette" aria-hidden="true">
+                <div class="mq-barre"><i></i><i></i><i></i><span></span></div>
+                <div class="mq-nav"><b></b><span></span><span></span><span></span><em></em></div>
+                <div class="mq-hero">
+                  <div class="mq-textes"><span></span><span></span><span class="court"></span><em></em></div>
+                  <div class="mq-image"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="11"/><path d="M20 9 A11 11 0 0 1 20 31 A7 11 0 0 0 20 9 Z"/></svg></div>
+                </div>
+                <div class="mq-cartes"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          <h3>Pensé pour votre marque.</h3>
+          <p>Vos couleurs, votre ton, votre public : un site qui ne ressemble à aucun autre.</p>
+        </article>
+        <article class="carte-pq" id="carte-code">
+          <div class="visuel">
+              <div class="terminal">
+                <p class="mono terminal-titre">Terminal</p>
+                <pre><span class="o">$</span> qamar verifier
+  ✓ connexion chiffrée (HTTPS)
+  ✓ formulaires protégés
+  ✓ dépendances à jour
+  ✓ images optimisées
+<span class="o">$</span> qamar publier
+  ✓ en ligne, sauvegardé</pre>
+              </div>
+            </div>
+          <h3>Rapide, propre et protégé.</h3>
+          <p>Un code sur mesure, sans extension inutile : des pages rapides et moins de failles.</p>
+        </article>
+        <article class="carte-pq" id="carte-seo">
+          <div class="visuel">
+              <div class="recherche">
+                <p class="champ">création site sur mesure</p>
+                <div class="resultat">
+                  <p class="mono">qamar.fr</p>
+                  <p class="resultat-titre">Qamar — Sites et applications web sur mesure</p>
+                  <p class="resultat-texte">Sites vitrines, e-commerce, sites conceptuels et applications web…</p>
+                </div>
+                <div class="resultat fantome"><i></i><i></i></div>
+              </div>
+            </div>
+          <h3>Trouvé par vos clients.</h3>
+          <p>Le référencement est prévu dès la conception : structure, vitesse, fiche Google, textes.</p>
+        </article>
+        <article class="carte-pq" id="carte-suivi">
+          <div class="visuel">
+              <div class="graphique">
+                <p class="mono">Disponibilité — 30 jours</p>
+                <div class="barres">
+                  <i style="--h:86%"></i><i style="--h:97%"></i><i style="--h:79%"></i><i style="--h:93%"></i><i style="--h:99%"></i><i style="--h:84%"></i><i style="--h:91%"></i><i style="--h:74%"></i><i style="--h:96%"></i><i style="--h:88%"></i><i style="--h:98%"></i><i style="--h:82%"></i>
+                </div>
+                <div class="pastilles mono"><span>Sauvegardes</span><span>Mises à jour</span><span>Support</span></div>
+              </div>
+            </div>
+          <h3>Suivi dans la durée.</h3>
+          <p>Hébergement, sauvegardes, mises à jour et un compte rendu chaque mois.</p>
+        </article>
+      </div>
+      <ul class="garanties">
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2l6 3v5c0 4-2.7 6.6-6 8-3.3-1.4-6-4-6-8V5z"/></svg><b>Sécurité et RGPD</b><span>Connexion chiffrée, mentions conformes.</span></li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M2.5 10h15M10 2.5c2.2 2.4 2.2 12.6 0 15M10 2.5c-2.2 2.4-2.2 12.6 0 15"/></svg><b>Hébergé en Europe</b><span>Vos données sur des serveurs européens.</span></li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 10l2 2 4-4"/></svg><b>Accessible à tous</b><span>Lisible, navigable au clavier, contrasté.</span></li>
+        <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 14l4-4 3 3 7-7"/><path d="M13 6h4v4"/></svg><b>Fait pour évoluer</b><span>Nouvelles pages, boutique ou espace client.</span></li>
+      </ul>
+
+      <p class="manifeste">Un site qui vous ressemble, <span class="gris">pas un modèle de plus.</span> De la première idée à la mise en ligne, <em>un seul interlocuteur</em></p>
+
+      <div class="carrousel-tete">
+        <p class="etiquette"><span class="carre" aria-hidden="true"></span>Notre méthode <span class="glisser mono">— glissez pour parcourir</span></p>
+        <div class="fleches">
+          <button type="button" class="fleche" data-sens="-1" aria-label="Étape précédente">←</button>
+          <button type="button" class="fleche" data-sens="1" aria-label="Étape suivante">→</button>
+        </div>
+      </div>
+      <div class="carrousel">
+        <article class="etape">
+          <div class="etape-visuel v1"><span class="mono">01</span><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M14 22h40v24H30l-10 8v-8h-6z"/><path d="M60 32h6v22h-6v7l-9-7H38"/></svg></div>
+          <p class="mono etape-tag">Échange</p>
+          <h3>On écoute votre projet, vos objectifs et votre budget.</h3>
+          <p class="etape-lien">30 minutes, sans engagement</p>
+        </article>
+        <article class="etape">
+          <div class="etape-visuel v2"><span class="mono">02</span><svg viewBox="0 0 80 80" aria-hidden="true"><rect x="12" y="16" width="56" height="44" rx="4"/><path d="M12 26h56M20 34h18M20 42h28M44 34h16v18H44z"/></svg></div>
+          <p class="mono etape-tag">Maquette</p>
+          <h3>Vous voyez votre site avant qu'une ligne de code soit écrite.</h3>
+          <p class="etape-lien">Deux allers-retours inclus</p>
+        </article>
+        <article class="etape">
+          <div class="etape-visuel v3"><span class="mono">03</span><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M30 26L16 40l14 14M50 26l14 14-14 14M44 20L36 60"/></svg></div>
+          <p class="mono etape-tag">Développement</p>
+          <h3>On construit, vous suivez l'avancée sur un lien de test.</h3>
+          <p class="etape-lien">Points réguliers</p>
+        </article>
+        <article class="etape">
+          <div class="etape-visuel v4"><span class="mono">04</span><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 12c10 8 14 20 12 32H28c-2-12 2-24 12-32z"/><circle cx="40" cy="30" r="5"/><path d="M28 44l-8 10h10M52 44l8 10H50M34 56l6 12 6-12"/></svg></div>
+          <p class="mono etape-tag">Mise en ligne</p>
+          <h3>Votre site est lancé, et on reste là pour la suite.</h3>
+          <p class="etape-lien">Suivi et maintenance</p>
+        </article>
+        <article class="etape">
+          <div class="etape-visuel v5"><span class="mono">05</span><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M16 56l14-14 10 10 24-24"/><path d="M50 28h14v14"/></svg></div>
+          <p class="mono etape-tag">Évolution</p>
+          <h3>Nouvelles pages, boutique, espace client : le site grandit avec vous.</h3>
+          <p class="etape-lien">Sur simple demande</p>
+        </article>
+      </div>
+      <div class="carrousel-progres" aria-hidden="true"><i></i></div>
+
+      <!-- ===== 7. Ce qui est inclus ===== -->
+      <div class="inclus">
+        <p class="etiquette"><span class="carre" aria-hidden="true"></span>Inclus</p>
+        <ul class="inclus-liste">
+          <li><a href="studio.html">Design adapté au mobile <span>→</span></a></li>
+          <li><a href="studio.html">Nom de domaine <span>→</span></a></li>
+          <li><a href="studio.html">Hébergement sécurisé <span>→</span></a></li>
+          <li><a href="studio.html">Certificat HTTPS <span>→</span></a></li>
+          <li><a href="studio.html">Formulaire de contact <span>→</span></a></li>
+          <li><a href="studio.html">Statistiques de visite <span>→</span></a></li>
+          <li><a href="studio.html">Référencement de base <span>→</span></a></li>
+          <li><a href="studio.html">Mentions légales et RGPD <span>→</span></a></li>
+          <li><a href="studio.html">Optimisation des images <span>→</span></a></li>
+          <li><a href="studio.html">Prise en main expliquée <span>→</span></a></li>
+          <li><a href="studio.html">Sauvegardes automatiques <span>→</span></a></li>
+          <li><a href="studio.html">Un mois de support <span>→</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Pied de page sombre ===== -->
+  <footer class="pied">
+    <div class="pied-haut">
+      <div class="pied-marque">
+        <a class="logo" href="index.html" aria-label="Qamar, accueil">
+          <img class="logo-marque" src="images/logo/qamar-logo.svg" alt="" width="52" height="36">
+          <span>Qamar</span>
+        </a>
+        <div class="pied-reseaux">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.2"/><circle cx="14.2" cy="5.8" r=".8"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 9v5M7 6.5v.1M10 14v-3a2 2 0 014 0v3M10 9v5"/></svg></a>
+        </div>
+      </div>
+      <div class="pied-colonnes">
+        <div>
+          <p>Tarifs</p>
+          <a href="studio.html#vitrine">Essentiel</a><a href="studio.html#e-commerce">Signature</a><a href="studio.html#conceptuel">Immersion</a><a href="studio.html#application">Sur mesure</a>
+        </div>
+        <div>
+          <p>Services</p>
+          <a href="marketing.html">Marketing</a><a href="fidelite.html">Cartes de fidélité</a><a href="methode.html#suivi">Suivi et maintenance</a>
+        </div>
+        <div>
+          <p>Qamar</p>
+          <a href="experiences.html">Nos expériences</a><a href="methode.html">Méthode</a><a href="contact.html">Contact</a><a href="devis.html">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+    <div class="pied-appel">
+      <p>Lancez votre projet aujourd'hui,<br>ou parlez-nous de votre idée.</p>
+      <div class="boutons">
+        <a class="btn btn-orange" href="devis.html">Demander un devis</a>
+        <a class="btn btn-sombre" href="contact.html">Nous écrire</a>
+      </div>
+    </div>
+    <div class="pied-bas mono">
+      <span>2026 © Qamar</span>
+      <nav aria-label="Informations légales"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="cgu.html">CGU</a></nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=20261119a" defer></script>
+  <script src="js/ville-aspiration.js?v=20261119f" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Qamar</title>
+  <meta name="description" content="Une question, une idée de projet ? Écrivez à Qamar.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Qamar">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Contact — Qamar">
+  <meta property="og:description" content="Une question, une idée de projet ? Écrivez à Qamar.">
+  <meta property="og:url" content="https://dhiaad.github.io/qamar/contact.html">
+  <meta property="og:image" content="https://dhiaad.github.io/qamar/images/partage-qamar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://dhiaad.github.io/qamar/contact.html">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="images/logo/qamar-q.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=20261119d">
+  <script>
+    // avant tout affichage : le texte reste caché tant que la police n'est pas chargée (évite le chevauchement au lancement)
+    (function () {
+      var r = document.documentElement, ok = function () { r.classList.add('polices'); };
+      r.classList.add('js');
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(ok); setTimeout(ok, 1200); } else { ok(); }
+    })();
+  </script>
+</head>
+<body class="interieur">
+
+  <!-- ===== En-tête ===== -->
+  <header class="entete">
+    <a class="logo" href="index.html" aria-label="Qamar, accueil">
+      <img class="logo-marque" src="images/logo/qamar-logo.svg" alt="" width="52" height="36">
+      <span>Qamar</span>
+    </a>
+    <nav class="nav-pilule" aria-label="Navigation principale">
+      <a href="experiences.html">Explorer <span class="point" aria-hidden="true">•</span></a>
+      <a href="studio.html">Tarifs</a>
+      <a href="marketing.html">Marketing</a>
+      <a href="fidelite.html">Cartes de fidélité</a>
+      <a href="methode.html">Méthodes</a>
+      <button class="nav-grille" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><circle cx="3" cy="3" r="1.3"/><circle cx="9" cy="3" r="1.3"/><circle cx="3" cy="9" r="1.3"/><circle cx="9" cy="9" r="1.3"/></svg>
+      </button>
+    </nav>
+    <div class="entete-actions">
+      <a class="btn btn-orange" href="devis.html"><span class="txt-long">Demander un devis</span><span class="txt-court">Devis</span></a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <button class="menu-fermer btn btn-clair" type="button">Fermer</button>
+    <nav aria-label="Menu">
+      <ul>
+        <li><a href="experiences.html">Explorer</a></li>
+        <li><a href="studio.html">Tarifs</a></li>
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="fidelite.html">Cartes de fidélité</a></li>
+        <li><a href="methode.html">Méthodes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="devis.html">Demander un devis</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section class="page-hero hero-court">
+      <div class="page-hero-fond" aria-hidden="true"><div class="page-lune"></div></div>
+      <div class="page-hero-contenu">
+        <p class="etiquette"><span class="carre" aria-hidden="true"></span>Contact</p>
+        <h1 class="page-titre">Parlons de<br>votre <em>projet</em></h1>
+        <p class="page-chapo">Une question, une idée encore floue, un site à refaire ? Écrivez-nous, on vous répond personnellement.</p>
+      </div>
+    </section>
+
+    <section class="clair page-corps">
+      <div class="contact-grille">
+        <aside class="contact-infos">
+          <!-- À COMPLÉTER : adresse e-mail, téléphone et réseaux de Qamar -->
+          <div><p class="etiquette">E-mail</p><p class="contact-valeur"><mark class="a-completer">à compléter</mark></p></div>
+          <div><p class="etiquette">Téléphone</p><p class="contact-valeur"><mark class="a-completer">à compléter</mark></p></div>
+          <div><p class="etiquette">Réseaux</p><p class="contact-valeur"><a href="#">Instagram</a> · <a href="#">LinkedIn</a></p></div>
+          <div class="contact-devis">
+            <p>Vous savez déjà ce que vous voulez ?</p>
+            <a class="btn btn-orange" href="devis.html">Demander un devis</a>
+          </div>
+        </aside>
+
+        <form class="formulaire" data-formulaire novalidate>
+          <div class="champs-2">
+            <label class="champ-libre"><span>Nom</span><input name="nom" autocomplete="name" required></label>
+            <label class="champ-libre"><span>Entreprise <i>facultatif</i></span><input name="entreprise" autocomplete="organization"></label>
+          </div>
+          <div class="champs-2">
+            <label class="champ-libre"><span>E-mail</span><input name="email" type="email" autocomplete="email" required></label>
+            <label class="champ-libre"><span>Téléphone <i>facultatif</i></span><input name="telephone" type="tel" autocomplete="tel"></label>
+          </div>
+          <label class="champ-libre"><span>Sujet</span>
+            <select name="sujet">
+              <option>Un projet de site</option>
+              <option>Le service marketing</option>
+              <option>Les cartes de fidélité</option>
+              <option>Un site existant</option>
+              <option>Autre chose</option>
+            </select>
+          </label>
+          <label class="champ-libre"><span>Message</span><textarea name="message" rows="6" required></textarea></label>
+          <label class="case-accord"><input type="checkbox" name="accord" required><span>J'accepte que mes informations soient utilisées pour répondre à ma demande. <a href="confidentialite.html">En savoir plus</a></span></label>
+          <div class="pot-de-miel" aria-hidden="true"><label>Laissez ce champ vide<input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+          <button class="btn btn-orange" type="submit">Envoyer le message</button>
+          <p class="formulaire-merci" hidden tabindex="-1" role="status">Merci, votre message a bien été envoyé. Nous revenons vers vous rapidement.</p>
+          <p class="formulaire-demo" hidden tabindex="-1" role="status"></p>
+          <p class="formulaire-erreur" hidden tabindex="-1" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Pied de page sombre ===== -->
+  <footer class="pied">
+    <div class="pied-haut">
+      <div class="pied-marque">
+        <a class="logo" href="index.html" aria-label="Qamar, accueil">
+          <img class="logo-marque" src="images/logo/qamar-logo.svg" alt="" width="52" height="36">
+          <span>Qamar</span>
+        </a>
+        <div class="pied-reseaux">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.2"/><circle cx="14.2" cy="5.8" r=".8"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 9v5M7 6.5v.1M10 14v-3a2 2 0 014 0v3M10 9v5"/></svg></a>
+        </div>
+      </div>
+      <div class="pied-colonnes">
+        <div>
+          <p>Tarifs</p>
+          <a href="studio.html#vitrine">Essentiel</a><a href="studio.html#e-commerce">Signature</a><a href="studio.html#conceptuel">Immersion</a><a href="studio.html#application">Sur mesure</a>
+        </div>
+        <div>
+          <p>Services</p>
+          <a href="marketing.html">Marketing</a><a href="fidelite.html">Cartes de fidélité</a><a href="methode.html#suivi">Suivi et maintenance</a>
+        </div>
+        <div>
+          <p>Qamar</p>
+          <a href="experiences.html">Nos expériences</a><a href="methode.html">Méthode</a><a href="contact.html">Contact</a><a href="devis.html">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+    <div class="pied-appel">
+      <p>Lancez votre projet aujourd'hui,<br>ou parlez-nous de votre idée.</p>
+      <div class="boutons">
+        <a class="btn btn-orange" href="devis.html">Demander un devis</a>
+        <a class="btn btn-sombre" href="contact.html">Nous écrire</a>
+      </div>
+    </div>
+    <div class="pied-bas mono">
+      <span>2026 © Qamar</span>
+      <nav aria-label="Informations légales"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="cgu.html">CGU</a></nav>
+    </div>
+  </footer>
+
+  <script src="js/config-formulaire.js?v=20261119a"></script>
+  <script src="js/main.js?v=20261119a" defer></script>
+</body>
+</html>

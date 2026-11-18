@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cartes de fidélité digitales — Qamar</title>
+  <meta name="description" content="Des cartes de fidélité dans Apple Wallet et Google Wallet : points ou tampons, notifications illimitées et message quand le client passe près de votre boutique.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Qamar">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Cartes de fidélité digitales — Qamar">
+  <meta property="og:description" content="Des cartes de fidélité dans Apple Wallet et Google Wallet : points ou tampons, notifications illimitées et message quand le client passe près de votre boutique.">
+  <meta property="og:url" content="https://dhiaad.github.io/qamar/fidelite.html">
+  <meta property="og:image" content="https://dhiaad.github.io/qamar/images/partage-qamar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://dhiaad.github.io/qamar/fidelite.html">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="images/logo/qamar-q.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=20261119d">
+  <script>
+    // avant tout affichage : le texte reste caché tant que la police n'est pas chargée (évite le chevauchement au lancement)
+    (function () {
+      var r = document.documentElement, ok = function () { r.classList.add('polices'); };
+      r.classList.add('js');
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(ok); setTimeout(ok, 1200); } else { ok(); }
+    })();
+  </script>
+</head>
+<body class="interieur">
+
+  <!-- ===== En-tête ===== -->
+  <header class="entete">
+    <a class="logo" href="index.html" aria-label="Qamar, accueil">
+      <img class="logo-marque" src="images/logo/qamar-logo.svg" alt="" width="52" height="36">
+      <span>Qamar</span>
+    </a>
+    <nav class="nav-pilule" aria-label="Navigation principale">
+      <a href="experiences.html">Explorer <span class="point" aria-hidden="true">•</span></a>
+      <a href="studio.html">Tarifs</a>
+      <a href="marketing.html">Marketing</a>
+      <a href="fidelite.html" aria-current="page">Cartes de fidélité</a>
+      <a href="methode.html">Méthodes</a>
+      <button class="nav-grille" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><circle cx="3" cy="3" r="1.3"/><circle cx="9" cy="3" r="1.3"/><circle cx="3" cy="9" r="1.3"/><circle cx="9" cy="9" r="1.3"/></svg>
+      </button>
+    </nav>
+    <div class="entete-actions">
+      <a class="btn btn-orange" href="devis.html"><span class="txt-long">Demander un devis</span><span class="txt-court">Devis</span></a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <button class="menu-fermer btn btn-clair" type="button">Fermer</button>
+    <nav aria-label="Menu">
+      <ul>
+        <li><a href="experiences.html">Explorer</a></li>
+        <li><a href="studio.html">Tarifs</a></li>
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="fidelite.html" aria-current="page">Cartes de fidélité</a></li>
+        <li><a href="methode.html">Méthodes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="devis.html">Demander un devis</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Démonstration pilotée par le défilement : le téléphone est là dès l'arrivée ; en descendant,
+         la carte à points se remplit, on glisse vers la carte à tampons, puis on recule jusqu'au plan
+         du quartier, où la notification arrive. Une bulle, posée contre le téléphone, explique chaque étape. -->
+    <section class="demo-fidelite" id="demo" aria-label="Démonstration de la carte de fidélité">
+      <div class="demo-defile">
+      <div class="demo-colle">
+      <div class="demo-tete">
+        <p class="etiquette"><span class="carre" aria-hidden="true"></span>Cartes de fidélité</p>
+        <h1 class="demo-titre">La carte de fidélité qui vit dans le <em>téléphone</em></h1>
+      </div>
+      <div class="demo-zone">
+        <div class="histoire-scene" aria-hidden="true">
+          <div class="plan">
+            <svg class="plan-rues" viewBox="0 0 620 620" preserveAspectRatio="xMidYMid slice"><path d="M-20 120 C 120 140 260 90 640 160"/><path d="M-20 330 L 640 300"/><path d="M-20 480 C 200 470 380 520 640 470"/><path d="M90 -20 L 130 640"/><path d="M300 -20 C 280 200 330 420 300 640"/><path d="M480 -20 L 450 640"/><path d="M-20 600 L 640 20" class="large"/><path d="M180 200 L 400 210 M200 400 L 420 380 M380 60 L 560 90" class="petite"/></svg>
+            <div class="plan-rayon"><span class="mono">À proximité</span></div>
+            <div class="plan-boutique"><span></span><p class="mono">Votre boutique</p></div>
+          </div>
+          <div class="tel-hist">
+            <div class="tel-hist-ecran">
+              <p class="tel-heure mono">9:41</p>
+              <p class="tel-titre">Cartes</p>
+              <div class="cartes-fenetre">
+                <div class="cartes-piste">
+                  <div class="carte-wallet carte-points">
+                    <div class="cw-haut"><span>Votre boutique</span><span class="mono">Points</span></div>
+                    <p class="cw-points"><b class="compteur-points">0</b> pts</p>
+                    <div class="cw-jauge"><i></i></div>
+                    <div class="cw-bas mono">Bon de 10 € à 150 points</div>
+                  </div>
+                  <div class="carte-wallet carte-tampons">
+                    <div class="cw-haut"><span>Votre boutique</span><span class="mono compteur-tampons">0 / 10</span></div>
+                    <div class="cw-tampons"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="cw-bas mono">Le 10ᵉ café offert</div>
+                  </div>
+                </div>
+              </div>
+              <div class="tel-points-nav"><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="notif notif-hist"><b>Votre boutique · maintenant</b><span>Vous passez tout près : votre café est offert aujourd'hui.</span></div>
+        </div>
+        <ol class="demo-bulles" aria-live="polite">
+          <li class="bulle-demo bulle-gauche"><p class="mono">01 / 04</p><h2>Toujours dans la poche</h2><p>Votre carte vit dans Apple Wallet ou Google Wallet, juste à côté de la carte bancaire. Impossible de l'oublier.</p></li>
+          <li class="bulle-demo bulle-droite"><p class="mono">02 / 04</p><h2>Des points…</h2><p>Un point par euro dépensé : le compteur avance à chaque passage en caisse, la récompense se rapproche.</p></li>
+          <li class="bulle-demo bulle-gauche"><p class="mono">03 / 04</p><h2>…ou des tampons</h2><p>Un tampon par visite, la récompense au bout de la carte. Simple à comprendre, simple à retenir.</p></li>
+          <li class="bulle-demo bulle-droite"><p class="mono">04 / 04</p><h2>Un message à proximité</h2><p>Votre client passe près de la boutique ? Son téléphone affiche votre message. Et vous pouvez écrire à tous vos clients quand vous voulez.</p></li>
+        </ol>
+      </div>
+      <div class="demo-controles">
+        <div class="demo-etapes" aria-label="Étapes de la démonstration"><button type="button" data-etape="0"><span class="mono">01</span>Toujours dans la poche</button><button type="button" data-etape="1"><span class="mono">02</span>Des points</button><button type="button" data-etape="2"><span class="mono">03</span>ou des tampons</button><button type="button" data-etape="3"><span class="mono">04</span>Un message à proximité</button></div>
+        <p class="mono demo-astuce"><span aria-hidden="true">↓</span> Faites défiler pour avancer</p>
+      </div>
+      </div>
+      </div>
+      <div class="boutons demo-actions"><a class="btn btn-orange" href="devis.html?option=fidelite">Ajouter à mon devis</a><a class="btn btn-sombre" href="#ce-que-fait">Ce que fait la carte</a></div>
+    </section>
+    <section class="clair page-corps">
+      <div class="bloc-section premier" id="ce-que-fait">
+        <p class="etiquette"><span class="carre" aria-hidden="true"></span>Ce que fait la carte</p>
+        <ul class="services">
+          <li class="service"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><circle cx="8" cy="16" r="3"/><circle cx="16" cy="16" r="3" fill="currentColor"/></svg><h3>Points ou tampons</h3><p>Un tampon par passage ou des points selon le montant : vous choisissez la règle et la récompense.</p></li>
+          <li class="service"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg><h3>Dans le téléphone</h3><p>La carte s'ajoute à Apple Wallet ou Google Wallet. Pas d'application à télécharger, pas de carte oubliée.</p></li>
+          <li class="service"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l2 2H4z"/><path d="M10 20a2 2 0 004 0"/></svg><h3>Messages illimités</h3><p>Envoyez une notification à vos clients quand vous le souhaitez : nouveauté, offre, fermeture exceptionnelle.</p></li>
+          <li class="service"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.5-6-11a6 6 0 0112 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg><h3>Message à proximité</h3><p>Quand un client passe près de votre boutique, un message peut s'afficher sur son téléphone pour l'inviter à entrer.</p></li>
+          <li class="service"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 000 16"/></svg><h3>À vos couleurs</h3><p>Logo, couleurs, visuel : la carte est dessinée par Qamar, dans le même style que votre site.</p></li>
+          <li class="service"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7V4h3M17 4h3v3M20 17v3h-3M7 20H4v-3"/><path d="M8 12h8"/></svg><h3>Simple en caisse</h3><p>Vous validez un passage en scannant la carte du client : quelques secondes, sans matériel compliqué.</p></li>
+        </ul>
+      </div>
+
+      <div class="bloc-section">
+        <p class="etiquette"><span class="carre" aria-hidden="true"></span>Comment ça marche</p>
+        <ol class="frise frise-3">
+          <li><span class="mono">01</span><h3>Le client scanne</h3><p>Un QR code en caisse, sur votre vitrine ou sur votre site.</p></li>
+          <li><span class="mono">02</span><h3>La carte s'ajoute</h3><p>Elle apparaît dans Apple Wallet ou Google Wallet, sans application à installer.</p></li>
+          <li><span class="mono">03</span><h3>Il revient</h3><p>À chaque passage, vous validez ; la récompense et vos messages font le reste.</p></li>
+        </ol>
+      </div>
+
+      <div class="encart-sombre">
+        <div>
+          <p class="mono o">Quelques idées</p>
+          <h2>Une règle simple, que vos clients retiennent.</h2>
+        </div>
+        <ul class="idees"><li><p class="mono">Café, boulangerie</p><p>Le 10ᵉ café offert</p></li><li><p class="mono">Coiffeur, institut</p><p>−20 % à la 6ᵉ visite</p></li><li><p class="mono">Restaurant</p><p>Le dessert offert tous les 5 repas</p></li><li><p class="mono">Boutique</p><p>1 point par euro, un bon d’achat à 100 points</p></li></ul>
+      </div>
+        <div class="faq">
+          <p class="etiquette"><span class="carre" aria-hidden="true"></span>Questions fréquentes</p>
+          <div class="faq-liste">
+          <details class="question">
+            <summary>Mes clients doivent-ils télécharger une application ?<span aria-hidden="true">+</span></summary>
+            <p>Non. La carte s'ajoute au portefeuille déjà présent sur leur téléphone : Apple Wallet sur iPhone, Google Wallet sur Android.</p>
+          </details>
+          <details class="question">
+            <summary>Combien de messages puis-je envoyer ?<span aria-hidden="true">+</span></summary>
+            <p>Autant que vous le souhaitez. On vous conseille simplement de garder un rythme raisonnable pour que vos clients restent attentifs.</p>
+          </details>
+          <details class="question">
+            <summary>Comment fonctionne le message à proximité ?<span aria-hidden="true">+</span></summary>
+            <p>La carte connaît l'adresse de votre boutique ; quand le client passe à côté, son téléphone peut afficher un message sur l'écran verrouillé.</p>
+          </details>
+          <details class="question">
+            <summary>Points ou tampons, que choisir ?<span aria-hidden="true">+</span></summary>
+            <p>Les tampons sont parfaits pour des achats réguliers et proches en prix (café, coiffeur). Les points conviennent mieux quand les montants varient (boutique).</p>
+          </details>
+          </div>
+        </div>
+        <div class="appel-final">
+          <h2>Vos clients reviennent plus souvent ?</h2>
+          <p>Dites-nous ce que vous vendez et la récompense que vous imaginez : on prépare votre carte.</p>
+          <div class="boutons"><a class="btn btn-orange" href="devis.html?option=fidelite">Demander un devis</a><a class="btn btn-contour-sombre" href="contact.html">Poser une question</a></div>
+        </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Pied de page sombre ===== -->
+  <footer class="pied">
+    <div class="pied-haut">
+      <div class="pied-marque">
+        <a class="logo" href="index.html" aria-label="Qamar, accueil">
+          <img class="logo-marque" src="images/logo/qamar-logo.svg" alt="" width="52" height="36">
+          <span>Qamar</span>
+        </a>
+        <div class="pied-reseaux">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.2"/><circle cx="14.2" cy="5.8" r=".8"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 9v5M7 6.5v.1M10 14v-3a2 2 0 014 0v3M10 9v5"/></svg></a>
+        </div>
+      </div>
+      <div class="pied-colonnes">
+        <div>
+          <p>Tarifs</p>
+          <a href="studio.html#vitrine">Essentiel</a><a href="studio.html#e-commerce">Signature</a><a href="studio.html#conceptuel">Immersion</a><a href="studio.html#application">Sur mesure</a>
+        </div>
+        <div>
+          <p>Services</p>
+          <a href="marketing.html">Marketing</a><a href="fidelite.html">Cartes de fidélité</a><a href="methode.html#suivi">Suivi et maintenance</a>
+        </div>
+        <div>
+          <p>Qamar</p>
+          <a href="experiences.html">Nos expériences</a><a href="methode.html">Méthode</a><a href="contact.html">Contact</a><a href="devis.html">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+    <div class="pied-appel">
+      <p>Lancez votre projet aujourd'hui,<br>ou parlez-nous de votre idée.</p>
+      <div class="boutons">
+        <a class="btn btn-orange" href="devis.html">Demander un devis</a>
+        <a class="btn btn-sombre" href="contact.html">Nous écrire</a>
+      </div>
+    </div>
+    <div class="pied-bas mono">
+      <span>2026 © Qamar</span>
+      <nav aria-label="Informations légales"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="cgu.html">CGU</a></nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=20261119a" defer></script>
+</body>
+</html>

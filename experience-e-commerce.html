@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atelier Séléné · Concept Qamar</title>
+  <meta name="description" content="Concept de démonstration Qamar : une boutique fictive, ses objets en orbite 3D, ses fiches produits et son panier.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Qamar">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Atelier Séléné · Concept Qamar">
+  <meta property="og:description" content="Concept de démonstration Qamar : une boutique fictive, ses objets en orbite 3D, ses fiches produits et son panier.">
+  <meta property="og:url" content="https://dhiaad.github.io/qamar/experience-e-commerce.html">
+  <meta property="og:image" content="https://dhiaad.github.io/qamar/images/partage-qamar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://dhiaad.github.io/qamar/experience-e-commerce.html">
+  <meta name="theme-color" content="#efe9df">
+  <link rel="icon" href="images/logo/qamar-q.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=20261119d">
+  <link rel="stylesheet" href="css/experiences.css?v=20261119a">
+  <script>
+    // avant tout affichage : le texte reste caché tant que la police n'est pas chargée (évite le chevauchement au lancement)
+    (function () {
+      var r = document.documentElement, ok = function () { r.classList.add('polices'); };
+      r.classList.add('js');
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(ok); setTimeout(ok, 1200); } else { ok(); }
+    })();
+  </script>
+</head>
+<body class="exp exp-e-commerce exp-clair" data-experience="e-commerce" style="--ambiance:#efe9df">
+
+  <div class="exp-voile" aria-hidden="true">
+    <div class="exp-voile-contenu">
+      <span class="exp-voile-anneau"></span>
+      <p class="exp-voile-num">04</p>
+      <p class="exp-voile-label">E-commerce</p>
+    </div>
+  </div>
+
+  <header class="exp-entete">
+    <a class="exp-puce exp-retour" href="experiences.html#e-commerce">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17 10H4M9 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+      <span class="exp-long">Galerie des expériences</span><span class="exp-court">Galerie</span>
+    </a>
+    <span class="exp-puce exp-concept mono">Concept de démonstration Qamar · 04 / <span class="seul-pc">05</span><span class="seul-mobile">04</span></span>
+    <a class="exp-puce exp-logo" href="index.html" aria-label="Qamar, accueil"><img src="images/logo/qamar-q.svg" alt="" width="26" height="26"></a>
+  </header>
+
+  <main id="contenu">
+    <button class="ec-panier-bouton" type="button" aria-label="Ouvrir le panier, 0 article">Panier <b>0</b></button>
+
+    <section class="ec-orbite" aria-label="Collection en orbite" tabindex="0">
+      <div class="ec-orbite-3d"></div>
+      <div class="ec-repli" aria-hidden="true"></div>
+      <div class="ec-orbite-contenu">
+        <div>
+          <p class="mono ec-sur">Atelier Séléné · boutique fictive</p>
+          <h1>Des objets qui gardent la lumière.</h1>
+        </div>
+        <div class="ec-orbite-bas">
+          <div class="ec-vedette" aria-live="polite">
+            <p class="mono ec-vedette-cat"></p>
+            <h2 class="ec-vedette-nom"></h2>
+            <p class="ec-vedette-prix"></p>
+            <div class="ec-vedette-teintes" role="radiogroup" aria-label="Coloris"></div>
+          </div>
+          <div class="ec-orbite-actions">
+            <button class="ec-rond ec-prec" type="button" aria-label="Pièce précédente">←</button>
+            <button class="ec-rond ec-suiv" type="button" aria-label="Pièce suivante">→</button>
+            <button class="ec-voir" type="button">Voir la fiche</button>
+            <button class="ec-noir ec-vedette-ajouter" type="button">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <p class="ec-astuce">Cliquez une pièce en orbite · glissez pour tourner</p>
+    </section>
+
+    <section class="ec-boutique" aria-labelledby="ec-boutique-titre">
+      <p class="mono ec-sur">Toute la boutique</p>
+      <h2 id="ec-boutique-titre">La grille, pour tout voir d'un coup.</h2>
+      <div class="ec-cats" role="tablist" aria-label="Catégories">
+        <button class="ec-cat" type="button" role="tab" aria-selected="true">Tous</button>
+        <button class="ec-cat" type="button" role="tab" aria-selected="false">Lumière</button>
+        <button class="ec-cat" type="button" role="tab" aria-selected="false">Table</button>
+        <button class="ec-cat" type="button" role="tab" aria-selected="false">Parfum</button>
+      </div>
+      <div class="ec-grille" aria-label="Produits"></div>
+    </section>
+
+    <div class="ec-fiche ec-voile" hidden>
+      <div class="ec-fiche-boite" role="dialog" aria-modal="true" aria-label="Fiche produit">
+        <div class="ec-fiche-art"></div>
+        <div class="ec-fiche-corps">
+          <div class="ec-fiche-tete"><p class="mono ec-fiche-cat"></p><button class="ec-fiche-fermer" type="button" aria-label="Fermer">✕</button></div>
+          <h2 class="ec-fiche-nom"></h2>
+          <p class="ec-fiche-prix"></p>
+          <p class="ec-fiche-desc"></p>
+          <div><p class="ec-fiche-teinte"></p><div class="ec-fiche-teintes"></div></div>
+          <div class="ec-fiche-bas">
+            <div class="ec-qte"><button type="button" data-q="-1" aria-label="Diminuer la quantité">−</button><span aria-live="polite">1</span><button type="button" data-q="1" aria-label="Augmenter la quantité">+</button></div>
+            <button class="ec-noir ec-fiche-ajouter" type="button"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ec-tiroir ec-voile" hidden>
+      <aside class="ec-tiroir-boite" role="dialog" aria-modal="true" aria-label="Panier">
+        <div class="ec-tiroir-tete"><h2>Votre panier</h2><button class="ec-tiroir-fermer" type="button" aria-label="Fermer le panier">✕</button></div>
+        <div class="ec-lignes"></div>
+        <div class="ec-tiroir-pied">
+          <div class="ec-sous-total"><span>Sous-total</span><span class="ec-total"></span></div>
+          <button class="ec-noir ec-commander" type="button">Commander</button>
+          <p class="ec-avis" role="status" hidden>Boutique de démonstration : aucune commande ni aucun paiement n'est effectué. <a href="devis.html">Créer votre boutique</a></p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <nav class="exp-voisins" aria-label="Autres expériences">
+      <a class="exp-voisin" href="experience-evenementiel.html">
+        <span class="mono">Précédente · 03</span>
+        <b>Événementiel</b>
+        <span class="exp-voisin-titre">Faites vivre votre événement.</span>
+      </a>
+      <a class="exp-voisin suivante pc-uniquement" href="experience-sur-mesure.html">
+        <span class="mono">Suivante · 05</span>
+        <b>Sur-mesure</b>
+        <span class="exp-voisin-titre">Votre univers, sans limites.</span>
+      </a>
+      <a class="exp-voisin suivante mobile-uniquement" href="experience-immersif.html">
+        <span class="mono">Suivante · 01</span>
+        <b>Immersif</b>
+        <span class="exp-voisin-titre">Entrez dans l'expérience.</span>
+      </a>
+  </nav>
+  <p class="exp-mention">Démonstration conçue par Qamar. Les marques, produits, événements et prix présentés sont fictifs.</p>
+
+  <script src="js/exp-commun.js?v=20261119a"></script>
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js"
+    } }
+  </script>
+  <script type="module" src="js/exp-e-commerce.js?v=20261119a"></script>
+</body>
+</html>

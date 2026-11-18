@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explorer — Qamar</title>
+  <meta name="description" content="Des portes vers des univers à vivre : une marche sur la Lune, une joaillerie, un festival, une boutique et une galerie générative. Des concepts imaginés et développés par Qamar, à vivre plutôt qu'à lire.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Qamar">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Explorer — Qamar">
+  <meta property="og:description" content="Des portes vers des univers à vivre : une marche sur la Lune, une joaillerie, un festival, une boutique et une galerie générative. Des concepts imaginés et développés par Qamar, à vivre plutôt qu'à lire.">
+  <meta property="og:url" content="https://dhiaad.github.io/qamar/experiences.html">
+  <meta property="og:image" content="https://dhiaad.github.io/qamar/images/partage-qamar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://dhiaad.github.io/qamar/experiences.html">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="images/logo/qamar-q.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=20261119d">
+  <link rel="stylesheet" href="css/experiences.css?v=20261119a">
+  <script>
+    // avant tout affichage : le texte reste caché tant que la police n'est pas chargée (évite le chevauchement au lancement)
+    (function () {
+      var r = document.documentElement, ok = function () { r.classList.add('polices'); };
+      r.classList.add('js');
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(ok); setTimeout(ok, 1200); } else { ok(); }
+    })();
+  </script>
+</head>
+<body class="interieur">
+
+  <!-- ===== En-tête ===== -->
+  <header class="entete">
+    <a class="logo" href="index.html" aria-label="Qamar, accueil">
+      <img class="logo-marque" src="images/logo/qamar-logo.svg" alt="" width="52" height="36">
+      <span>Qamar</span>
+    </a>
+    <nav class="nav-pilule" aria-label="Navigation principale">
+      <a href="experiences.html" aria-current="page">Explorer <span class="point" aria-hidden="true">•</span></a>
+      <a href="studio.html">Tarifs</a>
+      <a href="marketing.html">Marketing</a>
+      <a href="fidelite.html">Cartes de fidélité</a>
+      <a href="methode.html">Méthodes</a>
+      <button class="nav-grille" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><circle cx="3" cy="3" r="1.3"/><circle cx="9" cy="3" r="1.3"/><circle cx="3" cy="9" r="1.3"/><circle cx="9" cy="9" r="1.3"/></svg>
+      </button>
+    </nav>
+    <div class="entete-actions">
+      <a class="btn btn-orange" href="devis.html"><span class="txt-long">Demander un devis</span><span class="txt-court">Devis</span></a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <button class="menu-fermer btn btn-clair" type="button">Fermer</button>
+    <nav aria-label="Menu">
+      <ul>
+        <li><a href="experiences.html" aria-current="page">Explorer</a></li>
+        <li><a href="studio.html">Tarifs</a></li>
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="fidelite.html">Cartes de fidélité</a></li>
+        <li><a href="methode.html">Méthodes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="devis.html">Demander un devis</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <section class="explorer" aria-labelledby="explorer-titre">
+      <div class="explorer-ciel" aria-hidden="true">
+        <div class="explorer-lune lune-vivante" data-suivre="curseur"><span class="lune-repli"></span><canvas></canvas></div>
+      </div>
+      <div class="explorer-tete">
+        <p class="etiquette"><span class="carre" aria-hidden="true"></span>Explorer</p>
+        <h1 class="explorer-titre" id="explorer-titre"><span class="seul-pc">Cinq</span><span class="seul-mobile">Quatre</span> portes.<br><em><span class="seul-pc">Cinq</span><span class="seul-mobile">Quatre</span> univers à vivre.</em></h1>
+        <p class="explorer-chapo">Derrière chaque porte, un concept imaginé et développé par Qamar. Approchez-vous, ouvrez, entrez : c'est la meilleure façon de comprendre ce que nous pouvons créer pour vous.</p>
+        <p class="mono explorer-astuce"><span class="seul-pc">Survolez une porte pour l'entrouvrir · cliquez pour entrer</span><span class="seul-mobile">Glissez pour voir les portes · touchez pour entrer</span></p>
+      </div>
+      <nav class="portes" aria-label="Les expériences">
+        <ul>
+          <li>
+            <a class="porte" href="experience-immersif.html" id="immersif" data-slug="immersif" style="--accent:#FC4F00;--ambiance:#000000">
+              <span class="porte-cadre" aria-hidden="true">
+                <span class="porte-salle"></span>
+                <span class="porte-lueur"></span>
+                <span class="porte-battant">
+                  <span class="porte-panneau"></span>
+                  <span class="porte-panneau"></span>
+                  <span class="porte-num mono">01</span>
+                  <span class="porte-poignee"></span>
+                </span>
+              </span>
+              <span class="porte-sol" aria-hidden="true"></span>
+              <span class="porte-texte">
+                <span class="mono porte-label">01 · Immersif</span>
+                <span class="porte-titre">Marcher sur la Lune</span>
+                <span class="porte-resume">Un monde en 3D à explorer : gravité lunaire, cratères et la Terre au-dessus de l'horizon.</span>
+                <span class="mono porte-entrer">Ouvrir la porte <span aria-hidden="true">→</span></span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="porte" href="experience-premium.html" id="premium" data-slug="premium" style="--accent:#FC4F00;--ambiance:#f4f0e8">
+              <span class="porte-cadre" aria-hidden="true">
+                <span class="porte-salle"></span>
+                <span class="porte-lueur"></span>
+                <span class="porte-battant">
+                  <span class="porte-panneau"></span>
+                  <span class="porte-panneau"></span>
+                  <span class="porte-num mono">02</span>
+                  <span class="porte-poignee"></span>
+                </span>
+              </span>
+              <span class="porte-sol" aria-hidden="true"></span>
+              <span class="porte-texte">
+                <span class="mono porte-label">02 · Premium</span>
+                <span class="porte-titre">Une maison de joaillerie</span>
+                <span class="porte-resume">Or, argent et lumière : des bijoux en 3D à faire tourner, une vitrine qui donne envie.</span>
+                <span class="mono porte-entrer">Ouvrir la porte <span aria-hidden="true">→</span></span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="porte" href="experience-evenementiel.html" id="evenementiel" data-slug="evenementiel" style="--accent:#FC4F00;--ambiance:#0d0712">
+              <span class="porte-cadre" aria-hidden="true">
+                <span class="porte-salle"></span>
+                <span class="porte-lueur"></span>
+                <span class="porte-battant">
+                  <span class="porte-panneau"></span>
+                  <span class="porte-panneau"></span>
+                  <span class="porte-num mono">03</span>
+                  <span class="porte-poignee"></span>
+                </span>
+              </span>
+              <span class="porte-sol" aria-hidden="true"></span>
+              <span class="porte-texte">
+                <span class="mono porte-label">03 · Événementiel</span>
+                <span class="porte-titre">Un festival de nuit</span>
+                <span class="porte-resume">Un compte à rebours vivant, un programme interactif et l'énergie d'une soirée.</span>
+                <span class="mono porte-entrer">Ouvrir la porte <span aria-hidden="true">→</span></span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="porte" href="experience-e-commerce.html" id="e-commerce" data-slug="e-commerce" style="--accent:#FC4F00;--ambiance:#efe9df">
+              <span class="porte-cadre" aria-hidden="true">
+                <span class="porte-salle"></span>
+                <span class="porte-lueur"></span>
+                <span class="porte-battant">
+                  <span class="porte-panneau"></span>
+                  <span class="porte-panneau"></span>
+                  <span class="porte-num mono">04</span>
+                  <span class="porte-poignee"></span>
+                </span>
+              </span>
+              <span class="porte-sol" aria-hidden="true"></span>
+              <span class="porte-texte">
+                <span class="mono porte-label">04 · E-commerce</span>
+                <span class="porte-titre">Une boutique qui donne envie</span>
+                <span class="porte-resume">Des produits mis en scène, un panier fluide jusqu'au dernier clic.</span>
+                <span class="mono porte-entrer">Ouvrir la porte <span aria-hidden="true">→</span></span>
+              </span>
+            </a>
+          </li>
+          <li class="pc-uniquement">
+            <a class="porte" href="experience-sur-mesure.html" id="sur-mesure" data-slug="sur-mesure" style="--accent:#FC4F00;--ambiance:#0a0b14">
+              <span class="porte-cadre" aria-hidden="true">
+                <span class="porte-salle"></span>
+                <span class="porte-lueur"></span>
+                <span class="porte-battant">
+                  <span class="porte-panneau"></span>
+                  <span class="porte-panneau"></span>
+                  <span class="porte-num mono">05</span>
+                  <span class="porte-poignee"></span>
+                </span>
+              </span>
+              <span class="porte-sol" aria-hidden="true"></span>
+              <span class="porte-texte">
+                <span class="mono porte-label">05 · Sur-mesure</span>
+                <span class="porte-titre">Une galerie vivante</span>
+                <span class="porte-resume">Une œuvre générative qui se peint à la souris, aux couleurs de la marque.</span>
+                <span class="mono porte-entrer">Ouvrir la porte <span aria-hidden="true">→</span></span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <p class="mono explorer-note">Concepts de démonstration Qamar · ce ne sont pas des projets clients</p>
+    </section>
+
+    <section class="clair page-corps explorer-suite">
+      <div class="encart-sombre exp-encart">
+        <div>
+          <p class="mono o">Et pour vous ?</p>
+          <h2>Un de ces univers vous parle ?</h2>
+          <p class="encart-texte">Ces concepts sont des démonstrations, pas des projets clients. Chacun peut devenir le point de départ de votre site, adapté à votre marque, à votre budget et à vos contenus.</p>
+        </div>
+        <div class="boutons"><a class="btn btn-orange" href="devis.html">Demander un devis</a><a class="btn btn-sombre" href="studio.html#conceptuel">Voir la formule Conceptuel</a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Pied de page sombre ===== -->
+  <footer class="pied">
+    <div class="pied-haut">
+      <div class="pied-marque">
+        <a class="logo" href="index.html" aria-label="Qamar, accueil">
+          <img class="logo-marque" src="images/logo/qamar-logo.svg" alt="" width="52" height="36">
+          <span>Qamar</span>
+        </a>
+        <div class="pied-reseaux">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.2"/><circle cx="14.2" cy="5.8" r=".8"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 9v5M7 6.5v.1M10 14v-3a2 2 0 014 0v3M10 9v5"/></svg></a>
+        </div>
+      </div>
+      <div class="pied-colonnes">
+        <div>
+          <p>Tarifs</p>
+          <a href="studio.html#vitrine">Essentiel</a><a href="studio.html#e-commerce">Signature</a><a href="studio.html#conceptuel">Immersion</a><a href="studio.html#application">Sur mesure</a>
+        </div>
+        <div>
+          <p>Services</p>
+          <a href="marketing.html">Marketing</a><a href="fidelite.html">Cartes de fidélité</a><a href="methode.html#suivi">Suivi et maintenance</a>
+        </div>
+        <div>
+          <p>Qamar</p>
+          <a href="experiences.html">Nos expériences</a><a href="methode.html">Méthode</a><a href="contact.html">Contact</a><a href="devis.html">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+    <div class="pied-appel">
+      <p>Lancez votre projet aujourd'hui,<br>ou parlez-nous de votre idée.</p>
+      <div class="boutons">
+        <a class="btn btn-orange" href="devis.html">Demander un devis</a>
+        <a class="btn btn-sombre" href="contact.html">Nous écrire</a>
+      </div>
+    </div>
+    <div class="pied-bas mono">
+      <span>2026 © Qamar</span>
+      <nav aria-label="Informations légales"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="cgu.html">CGU</a></nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=20261119a" defer></script>
+  <script src="js/exp-commun.js?v=20261119a"></script>
+  <script src="js/exp-portes.js?v=20261119a" defer></script>
+  <script src="js/lune-vivante.js?v=20261119a" defer></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demander un devis — Qamar</title>
+  <meta name="description" content="Décrivez votre projet de site en quelques questions : Qamar revient vers vous avec une proposition claire.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Qamar">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Demander un devis — Qamar">
+  <meta property="og:description" content="Décrivez votre projet de site en quelques questions : Qamar revient vers vous avec une proposition claire.">
+  <meta property="og:url" content="https://dhiaad.github.io/qamar/devis.html">
+  <meta property="og:image" content="https://dhiaad.github.io/qamar/images/partage-qamar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://dhiaad.github.io/qamar/devis.html">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="images/logo/qamar-q.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=20261119d">
+  <script>
+    // avant tout affichage : le texte reste caché tant que la police n'est pas chargée (évite le chevauchement au lancement)
+    (function () {
+      var r = document.documentElement, ok = function () { r.classList.add('polices'); };
+      r.classList.add('js');
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(ok); setTimeout(ok, 1200); } else { ok(); }
+    })();
+  </script>
+</head>
+<body class="interieur">
+
+  <!-- ===== En-tête ===== -->
+  <header class="entete">
+    <a class="logo" href="index.html" aria-label="Qamar, accueil">
+      <img class="logo-marque" src="images/logo/qamar-logo.svg" alt="" width="52" height="36">
+      <span>Qamar</span>
+    </a>
+    <nav class="nav-pilule" aria-label="Navigation principale">
+      <a href="experiences.html">Explorer <span class="point" aria-hidden="true">•</span></a>
+      <a href="studio.html">Tarifs</a>
+      <a href="marketing.html">Marketing</a>
+      <a href="fidelite.html">Cartes de fidélité</a>
+      <a href="methode.html">Méthodes</a>
+      <button class="nav-grille" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <svg viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><circle cx="3" cy="3" r="1.3"/><circle cx="9" cy="3" r="1.3"/><circle cx="3" cy="9" r="1.3"/><circle cx="9" cy="9" r="1.3"/></svg>
+      </button>
+    </nav>
+    <div class="entete-actions">
+      <a class="btn btn-orange" href="devis.html"><span class="txt-long">Demander un devis</span><span class="txt-court">Devis</span></a>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" hidden>
+    <button class="menu-fermer btn btn-clair" type="button">Fermer</button>
+    <nav aria-label="Menu">
+      <ul>
+        <li><a href="experiences.html">Explorer</a></li>
+        <li><a href="studio.html">Tarifs</a></li>
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="fidelite.html">Cartes de fidélité</a></li>
+        <li><a href="methode.html">Méthodes</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="devis.html">Demander un devis</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <!-- la Lune passe en fond de page : elle reste derrière le formulaire pendant qu'on le remplit -->
+    <div class="devis-ciel" aria-hidden="true"><div class="devis-lune lune-vivante"><span class="lune-repli"></span><canvas></canvas></div></div>
+    <section class="devis-tete">
+      <p class="etiquette"><span class="carre" aria-hidden="true"></span>Devis</p>
+      <h1 class="devis-titre">Parlez-nous de <em>votre projet</em></h1>
+      <p class="devis-chapo">Votre projet et vos coordonnées suffisent. Le reste est facultatif : il nous aide simplement à vous répondre plus précisément. Sans engagement.</p>
+    </section>
+
+    <section class="clair page-corps devis-panneau">
+      <div class="devis-grille">
+        <form class="formulaire formulaire-devis" data-formulaire novalidate>
+          <ol class="devis-progression" aria-label="Deux parties">
+            <li class="essentiel"><span class="mono">1</span>Votre projet et vous <i>obligatoire</i></li>
+            <li><span class="mono">2</span>Précisions <i>facultatif</i></li>
+          </ol>
+          <fieldset class="etape-devis devis-essentiel">
+            <legend><span class="mono">01</span> Votre projet et vous</legend>
+            <label class="champ-libre"><span>Parlez-nous de votre projet</span><textarea name="projet" rows="5" required placeholder="Votre activité, ce que le site doit permettre, des sites que vous aimez…"></textarea></label>
+            <div class="champs-2">
+              <label class="champ-libre"><span>Nom</span><input name="nom" autocomplete="name" required></label>
+              <label class="champ-libre"><span>E-mail</span><input name="email" type="email" autocomplete="email" required></label>
+            </div>
+            <div class="champs-2">
+              <label class="champ-libre"><span>Entreprise <i>facultatif</i></span><input name="entreprise" autocomplete="organization"></label>
+              <label class="champ-libre"><span>Téléphone <i>facultatif</i></span><input name="telephone" type="tel" autocomplete="tel"></label>
+            </div>
+            <label class="champ-libre"><span>Site actuel <i>facultatif</i></span><input name="site" type="url" placeholder="https://"></label>
+          </fieldset>
+          <div class="devis-facultatif">
+            <p class="devis-facultatif-tete"><b>Pour un devis plus précis</b> Ces questions sont facultatives : répondez seulement à celles qui vous parlent.</p>
+          <fieldset class="etape-devis">
+            <legend><span class="mono">02</span> Quel type de site ? <i>facultatif</i></legend>
+            <div class="choix-grille"><label class="choix"><input type="radio" name="formule" value="vitrine"><span class="choix-carte"><span class="choix-lune"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="13" class="ombre"/><path class="lumiere" d="M20 7 A13 13 0 0 1 20 33 A8 13 0 0 0 20 7 Z"/></svg></span><span class="choix-nom">Essentiel</span><span class="choix-sous">Une présence professionnelle pour présenter votre activité et recevoir des demandes.</span></span></label><label class="choix"><input type="radio" name="formule" value="e-commerce"><span class="choix-carte"><span class="choix-lune"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="13" class="ombre"/><path class="lumiere" d="M20 7 A13 13 0 0 1 20 33 Z"/></svg></span><span class="choix-nom">Signature</span><span class="choix-sous">Tout l'Essentiel, plus une boutique en ligne et des comptes clients.</span></span></label><label class="choix"><input type="radio" name="formule" value="conceptuel"><span class="choix-carte"><span class="choix-lune"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="13" class="ombre"/><path class="lumiere" d="M20 7 A13 13 0 0 1 20 33 A8 13 0 0 1 20 7 Z"/></svg></span><span class="choix-nom">Immersion</span><span class="choix-sous">Tout Signature, plus une expérience qui marque les esprits.</span></span></label><label class="choix"><input type="radio" name="formule" value="application"><span class="choix-carte"><span class="choix-lune"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="13" class="lumiere"/></svg></span><span class="choix-nom">Sur mesure</span><span class="choix-sous">Applications web, plateformes et projets qui sortent des trois offres.</span></span></label><label class="choix"><input type="radio" name="formule" value="conseil"><span class="choix-carte"><span class="choix-nom">Je ne sais pas encore</span><span class="choix-sous">On vous conseille</span></span></label></div>
+          </fieldset>
+          <fieldset class="etape-devis">
+            <legend><span class="mono">03</span> Des services en plus ? <i>facultatif</i></legend>
+            <div class="choix-grille choix-3"><label class="choix"><input type="checkbox" name="options" value="marketing"><span class="choix-carte"><span class="choix-nom">Marketing</span><span class="choix-sous">Réseaux sociaux gérés de A à Z</span></span></label><label class="choix"><input type="checkbox" name="options" value="fidelite"><span class="choix-carte"><span class="choix-nom">Carte de fidélité</span><span class="choix-sous">Dans Apple et Google Wallet</span></span></label><label class="choix"><input type="checkbox" name="options" value="suivi"><span class="choix-carte"><span class="choix-nom">Suivi et maintenance</span><span class="choix-sous">Abonnement, avec ou sans engagement</span></span></label></div>
+          </fieldset>
+          <fieldset class="etape-devis">
+            <legend><span class="mono">04</span> Budget et délai <i>facultatif</i></legend>
+            <p class="legende-sous">Budget envisagé</p>
+            <div class="pastilles-choix"><label class="choix pastille"><input type="radio" name="budget" value="Moins de 2 000 €"><span class="choix-carte"><span class="choix-nom">Moins de 2 000 €</span></span></label><label class="choix pastille"><input type="radio" name="budget" value="2 000 à 5 000 €"><span class="choix-carte"><span class="choix-nom">2 000 à 5 000 €</span></span></label><label class="choix pastille"><input type="radio" name="budget" value="5 000 à 10 000 €"><span class="choix-carte"><span class="choix-nom">5 000 à 10 000 €</span></span></label><label class="choix pastille"><input type="radio" name="budget" value="Plus de 10 000 €"><span class="choix-carte"><span class="choix-nom">Plus de 10 000 €</span></span></label><label class="choix pastille"><input type="radio" name="budget" value="À définir ensemble"><span class="choix-carte"><span class="choix-nom">À définir ensemble</span></span></label></div>
+            <p class="legende-sous">Pour quand ?</p>
+            <div class="pastilles-choix"><label class="choix pastille"><input type="radio" name="delai" value="Dès que possible"><span class="choix-carte"><span class="choix-nom">Dès que possible</span></span></label><label class="choix pastille"><input type="radio" name="delai" value="D'ici 1 à 3 mois"><span class="choix-carte"><span class="choix-nom">D'ici 1 à 3 mois</span></span></label><label class="choix pastille"><input type="radio" name="delai" value="Plus tard"><span class="choix-carte"><span class="choix-nom">Plus tard</span></span></label><label class="choix pastille"><input type="radio" name="delai" value="Pas de date précise"><span class="choix-carte"><span class="choix-nom">Pas de date précise</span></span></label></div>
+          </fieldset>
+          </div>
+          <label class="case-accord"><input type="checkbox" name="accord" required><span>J'accepte que mes informations soient utilisées pour établir mon devis. <a href="confidentialite.html">En savoir plus</a></span></label>
+          <div class="pot-de-miel" aria-hidden="true"><label>Laissez ce champ vide<input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+          <button class="btn btn-orange" type="submit">Envoyer ma demande</button>
+          <p class="formulaire-merci" hidden tabindex="-1" role="status">Merci, votre demande a bien été envoyée. Nous revenons vers vous avec une proposition.</p>
+          <p class="formulaire-demo" hidden tabindex="-1" role="status"></p>
+          <p class="formulaire-erreur" hidden tabindex="-1" role="alert"></p>
+        </form>
+
+        <aside class="recap" aria-label="Récapitulatif">
+          <p class="etiquette"><span class="carre" aria-hidden="true"></span>Récapitulatif</p>
+          <dl>
+            <div><dt class="mono">Formule</dt><dd data-recap="formule">—</dd></div>
+            <div><dt class="mono">Services</dt><dd data-recap="options">Aucun</dd></div>
+            <div><dt class="mono">Budget</dt><dd data-recap="budget">—</dd></div>
+            <div><dt class="mono">Délai</dt><dd data-recap="delai">—</dd></div>
+          </dl>
+          <p class="recap-note">Réponse personnalisée, sans engagement. Les tarifs affichés sur le site sont indicatifs : le devis fait foi.</p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Pied de page sombre ===== -->
+  <footer class="pied">
+    <div class="pied-haut">
+      <div class="pied-marque">
+        <a class="logo" href="index.html" aria-label="Qamar, accueil">
+          <img class="logo-marque" src="images/logo/qamar-logo.svg" alt="" width="52" height="36">
+          <span>Qamar</span>
+        </a>
+        <div class="pied-reseaux">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.2"/><circle cx="14.2" cy="5.8" r=".8"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 9v5M7 6.5v.1M10 14v-3a2 2 0 014 0v3M10 9v5"/></svg></a>
+        </div>
+      </div>
+      <div class="pied-colonnes">
+        <div>
+          <p>Tarifs</p>
+          <a href="studio.html#vitrine">Essentiel</a><a href="studio.html#e-commerce">Signature</a><a href="studio.html#conceptuel">Immersion</a><a href="studio.html#application">Sur mesure</a>
+        </div>
+        <div>
+          <p>Services</p>
+          <a href="marketing.html">Marketing</a><a href="fidelite.html">Cartes de fidélité</a><a href="methode.html#suivi">Suivi et maintenance</a>
+        </div>
+        <div>
+          <p>Qamar</p>
+          <a href="experiences.html">Nos expériences</a><a href="methode.html">Méthode</a><a href="contact.html">Contact</a><a href="devis.html">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+    <div class="pied-appel">
+      <p>Lancez votre projet aujourd'hui,<br>ou parlez-nous de votre idée.</p>
+      <div class="boutons">
+        <a class="btn btn-orange" href="devis.html">Demander un devis</a>
+        <a class="btn btn-sombre" href="contact.html">Nous écrire</a>
+      </div>
+    </div>
+    <div class="pied-bas mono">
+      <span>2026 © Qamar</span>
+      <nav aria-label="Informations légales"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="cgu.html">CGU</a></nav>
+    </div>
+  </footer>
+
+  <script src="js/config-formulaire.js?v=20261119a"></script>
+  <script src="js/main.js?v=20261119a" defer></script>
+  <script src="js/lune-vivante.js?v=20261119a" defer></script>
+</body>
+</html>
